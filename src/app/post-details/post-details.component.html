@@ -13,8 +13,8 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{post.lastUpdated}}</td>
-                <td>{{post.createdOn}}</td>
+                <td>{{post.lastUpdated | date:'medium'}}</td>
+                <td>{{post.createdOn | date}}</td>
             </tr>
         </tbody>
     </table>
