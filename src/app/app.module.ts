@@ -5,13 +5,14 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { PostListComponent } from './post-list/post-list.component';
-
+import { PostDetailsComponent } from './post-details/post-details.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
-        PostListComponent
+        PostListComponent,
+        PostDetailsComponent
     ],
     imports: [
         BrowserModule,
@@ -24,6 +25,10 @@ import { PostListComponent } from './post-list/post-list.component';
             {
                 path: 'posts',
                 component: PostListComponent
+            },
+            {
+                path: 'posts/:postId',
+                component: PostDetailsComponent
             }
         ])
     ],
