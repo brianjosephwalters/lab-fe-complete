@@ -7,8 +7,12 @@
     </div>
     <div class="navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a>Posts</a></li>
-            <li><a>Booksmarks</a></li>
+            <li [ngClass]="{'active': currentRoute === 'post'}">
+                <a (click)="goToRoute('posts')">Posts</a>
+            </li>
+            <li [ngClass]="{'active': currentRoute === 'bookmark'}">
+                <a (click)="goToRoute('bookmarks')">Booksmarks</a>
+            </li>
         </ul>
     </div>
 </div>

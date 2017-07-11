@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
+import { BookmarkListComponent } from './bookmark-list/bookmark-list.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
         PostListComponent,
-        PostDetailsComponent
+        PostDetailsComponent,
+        BookmarkListComponent
     ],
     imports: [
         BrowserModule,
@@ -29,6 +31,10 @@ import { PostDetailsComponent } from './post-details/post-details.component';
             {
                 path: 'posts/:postId',
                 component: PostDetailsComponent
+            },
+            {
+                path: 'bookmarks',
+                component: BookmarkListComponent
             }
         ])
     ],
