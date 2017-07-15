@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 
+import { Post } from './post';
+
 @Injectable()
 export class PostService {
-    private posts: object[];
+    private posts: Post[];
 
     constructor() {
         this.posts = [
@@ -36,11 +38,11 @@ export class PostService {
         ];
     }
 
-    getAllPosts(): object[] {
+    getAllPosts(): Post[] {
         return this.posts;
     }
 
-    getPostById(postId: number): object {
+    getPostById(postId: number): Post {
         return this.posts.filter(post => post['postId'] == postId)[0];
     }
 }

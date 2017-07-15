@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { PostService } from '../post-service/post.service';
+import { Post } from '../post-service/post';
 
 @Component({
     selector: 'post-list',
@@ -8,7 +9,7 @@ import { PostService } from '../post-service/post.service';
     styleUrls: ['post-list.component.css']
 })
 export class PostListComponent {
-    private posts: object[];
+    private posts: Post[];
 
     constructor(postService: PostService) {
         this.posts = postService.getAllPosts();
