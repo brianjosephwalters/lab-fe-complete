@@ -8,6 +8,8 @@ import { PostListComponent } from './post-list/post-list.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
 import { BookmarkListComponent } from './bookmark-list/bookmark-list.component';
 
+import { PostService } from './post-service/post.service';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -38,7 +40,7 @@ import { BookmarkListComponent } from './bookmark-list/bookmark-list.component';
             }
         ])
     ],
-    providers: [],
+    providers: [PostService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
