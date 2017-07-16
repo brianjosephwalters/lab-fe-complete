@@ -13,11 +13,13 @@ export class PostDetailsComponent {
 
     private postId: number;
     private post: Post;
+    private error: string;
 
     constructor(route: ActivatedRoute, postService: PostService) {
         route.params.subscribe(params => this.postId = params['postId'])
         postService.getPostById(this.postId)
-            .then((post) => this.post = post);
+            .then((post) => this.post = post)
+            .catch((error) => this.error = error);
     }
 
 }

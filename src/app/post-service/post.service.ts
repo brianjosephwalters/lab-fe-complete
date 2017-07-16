@@ -16,12 +16,19 @@ export class PostService {
     getAllPosts(): Promise<Post[]> {
         return this.http.get(this.url)
             .toPromise()
-            .then(response => response.json() as Post[]);
+            .then(response => response.json() as Post[])
+            .catch(this.handleError);
     }
 
     getPostById(postId: number): Promise<Post> {
         return this.http.get(this.url + `/${postId}`)
             .toPromise()
-            .then(response => response.json() as Post);
+            .then(response => response.json() as Post)
+            .catch(this.handleError);
+    }
+
+    private handleError(error: any): Promise<string> {
+        console.log(error);
+        return Promise.reject("Unable to retrieve post data.");
     }
 }

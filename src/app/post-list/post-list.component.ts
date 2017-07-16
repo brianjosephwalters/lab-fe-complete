@@ -10,9 +10,11 @@ import { Post } from '../post-service/post';
 })
 export class PostListComponent {
     private posts: Post[];
-
+    private error: string;
+    
     constructor(postService: PostService) {
         postService.getAllPosts()
-            .then((posts) => this.posts = posts);
+            .then((posts) => this.posts = posts)
+            .catch((error) => this.error = error);
     }
 }
