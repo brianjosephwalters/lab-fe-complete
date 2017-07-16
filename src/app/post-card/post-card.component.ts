@@ -1,8 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
-
-import { PostService } from '../post-service/post.service';
 import { Post } from '../post-service/post';
 
 @Component({
@@ -13,20 +11,11 @@ import { Post } from '../post-service/post';
 export class PostCardComponent {
     @Input() 
     private post: Post;
-    private postService: PostService;
-    private router: Router;
+    @Output()
+    private postDeleted = new EventEmitter();
 
-    constructor(postService: PostService, router: Router) {
-        this.postService = postService;
-        this.router = router;
-    }
-
-    deletePost() {
-        this.postService.deletePost(this.post.postId)
-            .then((post) => {
-                this.post = post;
-                this.router.navigateByUrl('/posts');
-            });
-    }
+      deletePost() {
+          this.postDeleted.emit(this.post);
+      }
 
 }
