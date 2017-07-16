@@ -1,6 +1,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <a [routerLink]="post.postId">{{post.title}}</a>
+        <div class="glyphicon glyphicon-remove pull-right" (click)="deletePost()"></div>
     </div>
     <div class="panel-body">{{post.body}}</div>
 </div>

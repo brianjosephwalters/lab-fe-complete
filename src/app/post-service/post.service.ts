@@ -41,6 +41,13 @@ export class PostService {
             .catch(this.handlePutError);
     }
 
+    deletePost(postId: number): Promise<Post> {
+        return this.http.delete(this.url + `/${postId}`)
+            .toPromise()
+            .then(response => response.json() as Post)
+            .catch(this.handleDeleteError);
+    }
+
     private handleError(error: any): Promise<string> {
         console.log(error);
         return Promise.reject("Unable to retrieve post data.");
@@ -55,4 +62,10 @@ export class PostService {
         console.log(error);
         return Promise.reject("Unable to update post.");
     }
+
+    private handleDeleteError(error: any): Promise<string> {
+        console.log(error);
+        return Promise.reject("Unable to delete post.");
+    }
+
 }
