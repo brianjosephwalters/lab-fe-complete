@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
 import { PostCardComponent } from './post-card/post-card.component';
+import { PostFormComponent } from './post-form/post-form.component';
 import { BookmarkListComponent } from './bookmark-list/bookmark-list.component';
 import { PostService } from './post-service/post.service';
 
@@ -19,6 +20,7 @@ import { PostService } from './post-service/post.service';
         PostListComponent,
         PostDetailsComponent,
         PostCardComponent,
+        PostFormComponent,
         BookmarkListComponent
     ],
     imports: [
@@ -34,6 +36,10 @@ import { PostService } from './post-service/post.service';
             {
                 path: 'posts',
                 component: PostListComponent
+            },
+            {
+                path: 'posts/create',
+                component: PostFormComponent
             },
             {
                 path: 'posts/:postId',
