@@ -34,6 +34,13 @@ export class PostService {
             .catch(this.handlePostError);
     }
 
+    updatePost(postId: number, post: Post): Promise<Post> {
+        return this.http.put(this.url + `/${postId}`, post)
+            .toPromise()
+            .then(response => response.json() as Post)
+            .catch(this.handlePutError);
+    }
+
     private handleError(error: any): Promise<string> {
         console.log(error);
         return Promise.reject("Unable to retrieve post data.");
@@ -42,5 +49,10 @@ export class PostService {
     private handlePostError(error: any): Promise<string> {
         console.log(error);
         return Promise.reject("Unable to create post.");
+    }
+
+    private handlePutError(error: any): Promise<string> {
+        console.log(error);
+        return Promise.reject("Unable to update post.");
     }
 }

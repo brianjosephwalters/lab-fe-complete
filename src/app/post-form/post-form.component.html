@@ -1,5 +1,5 @@
 <h1>Post Form</h1>
-<form>
+<form *ngIf="post">
     <div class="form-group">
         <label for="title">Title</label>
         <input type="text" class="form-control" id="title"  name="title"
@@ -25,10 +25,4 @@
   <span class="glyphicon glyphicon-exclamation-sign"></span>
   {{error}}
 </div>
-<p>TODO: post.title: {{post.title}}</p>
-<p>TODO: post.body: {{post.body}}</p>
-<p>TODO: post.author: {{post.author}}</p>
-<p>TODO: post.id: {{post.id}}</p>
-<p>TODO: post.summary: {{post.summary}}</p>
-<p>TODO: post.createdOn: {{post.createdOn | date }}</p>
-<p>TODO: post.lastUpdated: {{post.lastUpdated | date}}</p>
+

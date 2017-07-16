@@ -45,6 +45,10 @@ import { PostService } from './post-service/post.service';
                 path: 'posts/:postId',
                 component: PostDetailsComponent
             },
+                        {
+                path:'posts/:postId/update',
+                component: PostFormComponent
+            },
             {
                 path: 'bookmarks',
                 component: BookmarkListComponent
