@@ -12,6 +12,7 @@ export class PostListComponent {
     private posts: Post[];
 
     constructor(postService: PostService) {
-        this.posts = postService.getAllPosts();
+        postService.getAllPosts()
+            .then((posts) => this.posts = posts);
     }
 }

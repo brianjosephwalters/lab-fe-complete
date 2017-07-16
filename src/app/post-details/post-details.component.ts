@@ -16,7 +16,8 @@ export class PostDetailsComponent {
 
     constructor(route: ActivatedRoute, postService: PostService) {
         route.params.subscribe(params => this.postId = params['postId'])
-        this.post = postService.getPostById(this.postId);
+        postService.getPostById(this.postId)
+            .then((post) => this.post = post);
     }
 
 }
