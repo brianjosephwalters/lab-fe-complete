@@ -8,9 +8,9 @@ export class PostSortPipe implements PipeTransform {
         if (values) {
             values.sort((first: Post, second: Post) => {
                 if (first.lastUpdated < second.lastUpdated) {
-                    return -1;
+                    return order === 'asc' ? 1 : -1;
                 } else if (first.lastUpdated > second.lastUpdated) {
-                    return 1;
+                    return order === 'asc' ? -1 : 1;
                 } else {
                     return 0;
                 }
