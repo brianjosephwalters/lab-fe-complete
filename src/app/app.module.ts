@@ -7,8 +7,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
+import { PostCardComponent } from './post-card/post-card.component';
 import { BookmarkListComponent } from './bookmark-list/bookmark-list.component';
-
 import { PostService } from './post-service/post.service';
 
 @NgModule({
@@ -17,6 +17,7 @@ import { PostService } from './post-service/post.service';
         HeaderComponent,
         PostListComponent,
         PostDetailsComponent,
+        PostCardComponent,
         BookmarkListComponent
     ],
     imports: [
