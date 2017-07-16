@@ -3,7 +3,7 @@
     <div routerLink="create" class="btn btn-primary pull-right">Create Post</div>
 </h2>
 <p>Select a post from the list below.</p>
-<post-card *ngFor="let post of posts"
+<post-card *ngFor="let post of posts | postSort"
     [post]="post"
     (postDeleted)="handlePostDeleted($event)">
 </post-card>

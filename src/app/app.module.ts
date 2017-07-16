@@ -12,6 +12,7 @@ import { PostCardComponent } from './post-card/post-card.component';
 import { PostFormComponent } from './post-form/post-form.component';
 import { BookmarkListComponent } from './bookmark-list/bookmark-list.component';
 import { PostService } from './post-service/post.service';
+import { PostSortPipe } from './post-service/post-sort.pipe';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { PostService } from './post-service/post.service';
         PostDetailsComponent,
         PostCardComponent,
         PostFormComponent,
-        BookmarkListComponent
+        BookmarkListComponent,
+        PostSortPipe
     ],
     imports: [
         BrowserModule,
