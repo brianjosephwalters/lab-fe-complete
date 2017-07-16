@@ -1,10 +1,7 @@
 <h2>Posts</h2>
 <p>Select a post from the list below.</p>
-<div *ngFor="let post of posts" class="panel panel-default">
-    <div class="panel-heading">
-        <a [routerLink]="post.postId">
-            {{post.title}}
-        </a>
-    </div>
-    <div class="panel-body">{{post.body}}</div>
+<post-card *ngFor="let post of posts" [post]="post"></post-card>
+<div *ngIf="error" class="alert alert-danger">
+  <span class="glyphicon glyphicon-exclamation-sign"></span>
+  {{error}}
 </div>
