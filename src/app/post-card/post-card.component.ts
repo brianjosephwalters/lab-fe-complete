@@ -1,4 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { Post } from '../post-service/post';
 
 @Component({
     selector: 'post-card',
@@ -6,6 +9,13 @@ import { Component, Input } from '@angular/core';
     styleUrls: ['post-card.component.css']
 })
 export class PostCardComponent {
-      @Input() 
-      private post: object;
+    @Input() 
+    private post: Post;
+    @Output()
+    private postDeleted = new EventEmitter();
+
+      deletePost() {
+          this.postDeleted.emit(this.post);
+      }
+
 }
