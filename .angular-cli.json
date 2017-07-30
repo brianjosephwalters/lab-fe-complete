@@ -12,7 +12,15 @@
             "tsconfig": "tsconfig.app.json",
             "styles": [
                 "styles.css"
-            ]
+            ],
+            "assets": [
+                {"glob": "**/*.png", "input": "./", "output": "./src"}
+            ],
+            "environmentSource": "environments/environment.ts",
+            "environments": {
+                "dev": "environments/environment.dev.ts",
+                "prod": "environments/environment.prod.ts"
+            }
         }
     ]
 }

@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
+import { environment } from '../../environments/environment';
+
 import { Post } from './post';
 
 @Injectable()
 export class PostService {
     private http: Http;
-    private url: string = 'http://localhost:8080/api/v1/post';
+    private url: string = environment.apiUrl;
 
     constructor(http: Http) {
         this.http = http;
